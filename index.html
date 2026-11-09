@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kotkantien Maalaus ja Tapetointi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="#etusivu" class="logo"><img src="logo.webp" alt="Kotkantien Maalaus ja Tapetointi" class="logo-img"></a>
+            <nav class="main-nav">
+                <a href="#etusivu" class="nav-link active">Etusivu</a>
+                <a href="#palvelut" class="nav-link">Palvelut</a>
+                <a href="#meista" class="nav-link">Meistä</a>
+                <a href="#galleria" class="nav-link">Galleria</a>
+                <a href="#yhteystiedot" class="nav-link btn-contact">Ota yhteyttä</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="etusivu" class="section hero-section">
+            <div class="container">
+                <h1>Kotkantien Maalaus ja Tapetointi</h1>
+                <p>Laadukasta maalaus- ja tapetointipalvelua ammattitaidolla. Teemme kodistasi uuden veroisen.</p>
+                <a href="#yhteystiedot" class="cta-button">Pyydä tarjous</a>
+            </div>
+        </section>
+
+        <section id="palvelut" class="section">
+            <div class="container">
+                <h2>Palvelumme</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Sisämaalaukset</h3>
+                        <p>Seinien, kattojen ja muiden sisäpintojen huolelliset pohjatyöt ja maalaukset.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Tapetointi</h3>
+                        <p>Tarkkaa ja siistiä tapetointia kaikille tapettityypeille ammattitaidolla.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Ulko- ja pintaremontit</h3>
+                        <p>Pienimuotoiset ulkomaalaukset ja pintojen kunnostustyöt.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="meista" class="section alt-bg">
+            <div class="container">
+                <h2>Meistä</h2>
+                <p>Olemme luotettava ja kokenut maalausalan yritys. Hoidamme sovitut työt ajallaan ja korkealla laatuvaatimuksella, asiakkaan toiveita kuunnellen.</p>
+            </div>
+        </section>
+
+        <section id="galleria" class="section">
+            <div class="container">
+                <h2>Galleria</h2>
+                <p>Tässä kuvia töistämme</p>
+            </div>
+        </section>
+        
+        <section id="yhteystiedot" class="section">
+            <div class="container">
+                <h2>Ota yhteyttä</h2>
+                <p class="section-desc">Haluatko tarjouksen tai lisätietoja palveluistamme? Täytä lomake tai ota yhteyttä suoraan.</p>
+                <div class="contact-layout">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Nimi *</label>
+                            <input type="text" id="name" name="name" required placeholder="Nimesi">
+                            <span class="error-msg" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Sähköposti *</label>
+                            <input type="email" id="email" name="email" required placeholder="sähköposti@esimerkki.fi">
+                            <span class="error-msg" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Puhelin</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+358 00 000 0000">
+                            <span class="error-msg" id="phoneError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Viesti *</label>
+                            <textarea id="message" name="message" required rows="5" placeholder="Kerro lyhyesti mitä olisi tehtävänä..."></textarea>
+                            <span class="error-msg" id="messageError"></span>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span class="btn-text">Lähetä viesti</span>
+                            <span class="btn-loading" hidden>
+                                <span class="spinner"></span>
+                                Lähetetään...<br>
+                            </span>
+                        </button>
+                        <div class="form-status" id="formStatus" hidden></div>
+                    </form>
+                    <div class="contact-info-side">
+                        <div class="contact-card">
+                            <h3>Yhteystiedot</h3>
+                            <div class="contact-detail">
+                                <span class="contact-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+                                <div>
+                                    <p class="contact-label">Puhelin</p>
+                                    <a href="tel:+358000000000">+358 00 000 0000</a>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <span class="contact-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
+                                <div>
+                                    <p class="contact-label">Sähköposti</p>
+                                    <a href="mailto:info@kotkantienmaalaus.fi">info@kotkantienmaalaus.fi</a>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <span class="contact-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
+                                <div>
+                                    <p class="contact-label">Palvelualue</p>
+                                    <p>Kotkantien seutu ja lähialueet</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Kotkantien Maalaus ja Tapetointi. Kaikki oikeudet pidätetään.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
