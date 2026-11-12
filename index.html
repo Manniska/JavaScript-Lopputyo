@@ -4,137 +4,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kotkantien Maalaus ja Tapetointi</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header class="site-header">
-        <div class="nav-container">
-            <a href="#etusivu" class="logo"><img src="logo.webp" alt="Kotkantien Maalaus ja Tapetointi" class="logo-img"></a>
-            <nav class="main-nav">
-                <a href="#etusivu" class="nav-link active">Etusivu</a>
-                <a href="#palvelut" class="nav-link">Palvelut</a>
-                <a href="#varitestaus" class="nav-link">Värien testaus</a>
-                <a href="#meista" class="nav-link">Meistä</a>
-                <a href="#galleria" class="nav-link">Galleria</a>
-                <a href="#yhteystiedot" class="nav-link btn-contact">Ota yhteyttä</a>
-            </nav>
+<body class="bg-light">
+
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#etusivu">
+                <img src="logo.webp" alt="Kotkantien Maalaus ja Tapetointi" height="40" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center gap-lg-3">
+                    <li class="nav-item"><a class="nav-link active fw-medium" href="#etusivu">Etusivu</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="#palvelut">Palvelut</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="#varitestaus">Värien testaus</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="#meista">Meistä</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="#galleria">Galleria</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary px-4 text-white fw-semibold" href="#yhteystiedot">Ota yhteyttä</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main>
-        <section id="etusivu" class="section hero-section">
-            <div class="container">
-                <h1>Kotkantien Maalaus ja Tapetointi</h1>
-                <p>Laadukasta maalaus- ja tapetointipalvelua ammattitaidolla. Teemme kodistasi uuden veroisen.</p>
-                <a href="#yhteystiedot" class="cta-button">Pyydä tarjous</a>
-            </div>
-        </section>
-
-        <section id="palvelut" class="section">
-            <div class="container">
-                <h2>Palvelumme</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <h3>Sisämaalaukset</h3>
-                        <p>Seinien, kattojen ja muiden sisäpintojen huolelliset pohjatyöt ja maalaukset.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Tapetointi</h3>
-                        <p>Tarkkaa ja siistiä tapetointia kaikille tapettityypeille ammattitaidolla.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Ulko- ja pintaremontit</h3>
-                        <p>Pienimuotoiset ulkomaalaukset ja pintojen kunnostustyöt.</p>
+        <!-- Hero Section -->
+        <section id="etusivu" class="hero-section py-5 py-lg-7 bg-white border-bottom">
+            <div class="container text-center py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold text-dark mb-3">Kotkantien Maalaus ja Tapetointi</h1>
+                        <p class="lead text-muted mb-4">Laadukasta maalaus- ja tapetointipalvelua ammattitaidolla. Teemme kodistasi uudenveroisen.</p>
+                        <a href="#yhteystiedot" class="btn btn-primary btn-lg px-4 fw-semibold shadow-sm">Pyydä tarjous</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="varitestaus" class="section alt-bg">
-            <div class="container">
-                <h2>Värien testaus</h2>
-                <p class="section-desc">Kokeile ja yhdistele eri sävyjä seinäpinnoille ennen päätöstä. Valitse ensin testattava pinta ja klikkaa sitten väriä paletista.</p>
-                
-                <div class="color-tester-layout">
-                    <div class="tester-preview-area">
-                        <div class="surface-box room-preview-container" id="surface1" onclick="setActiveSurface('surface1')">
-                            <div class="color-bg-layer" id="bg1"></div>
-                            <img src="wallpictureTransparentWall.webp" alt="Huoneen seinä" class="room-base-image">
-                            <div class="surface-badge">
-                                <span class="surface-label">Pinta 1 (Pääseinä)</span>
-                                <span class="selected-color-info" id="info1">Ei valittua väriä</span>
+        <!-- Services Section -->
+        <section id="palvelut" class="py-6 py-lg-7">
+            <div class="container py-5">
+                <h2 class="text-center fw-bold mb-5 text-dark">Palvelumme</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 hover-lift">
+                            <div class="card-body p-0">
+                                <div class="text-primary fs-3 mb-3"><i class="fa-solid fa-paint-roller"></i></div>
+                                <h3 class="h5 fw-bold mb-3 text-dark">Sisämaalaukset</h3>
+                                <p class="text-muted mb-0">Seinien, kattojen ja muiden sisäpintojen huolelliset pohjatyöt ja maalaukset.</p>
                             </div>
                         </div>
-                        <button type="button" class="reset-colors-btn" id="resetColorsBtn">
-                            <i class="fa-solid fa-rotate-right"></i> Tyhjennä pinnat
-                        </button>
                     </div>
-
-                    <div class="palette-container">
-                        <div class="active-surface-indicator">
-                            Valittuna: <strong id="activeSurfaceName">Pinta 1</strong> (klikkaa pintaa vaihtaaksesi)
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 hover-lift">
+                            <div class="card-body p-0">
+                                <div class="text-primary fs-3 mb-3"><i class="fa-solid fa-scroll"></i></div>
+                                <h3 class="h5 fw-bold mb-3 text-dark">Tapetointi</h3>
+                                <p class="text-muted mb-0">Tarkkaa ja siistiä tapetointia kaikille tapettityypeille ammattitaidolla.</p>
+                            </div>
                         </div>
-                        <div class="color-grid" id="colorGrid">
-                            <!-- 16 required colors -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 hover-lift">
+                            <div class="card-body p-0">
+                                <div class="text-primary fs-3 mb-3"><i class="fa-solid fa-house-chimney"></i></div>
+                                <h3 class="h5 fw-bold mb-3 text-dark">Ulko- ja pintaremontit</h3>
+                                <p class="text-muted mb-0">Pienimuotoiset ulkomaalaukset ja pintojen kunnostustyöt.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="meista" class="section alt-bg">
-            <div class="container">
-                <h2>Meistä</h2>
-                <p>Olemme luotettava ja kokenut maalausalan yritys. Hoidamme sovitut työt ajallaan ja korkealla laatuvaatimuksella, asiakkaan toiveita kuunnellen.</p>
+        <!-- Color Tester Section -->
+        <section id="varitestaus" class="py-6 py-lg-7 bg-white border-top border-bottom">
+            <div class="container py-5">
+                <h2 class="text-center fw-bold mb-3 text-dark">Värien testaus</h2>
+                <p class="section-desc text-center text-muted mb-5">Kokeile ja yhdistele eri sävyjä seinäpinnoille ennen päätöstä. Valitse ensin testattava pinta ja klikkaa sitten väriä paletista.</p>
+
+                <div class="row g-4 align-items-start">
+                    <!-- Preview Areas -->
+                    <div class="col-lg-7">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="room-preview-container border border-3 rounded-3 overflow-hidden position-relative cursor-pointer shadow-sm" id="surface1" onclick="setActiveSurface('surface1')" style="height: 480px;">
+                                    <div class="color-bg-layer position-absolute top-0 start-0 w-100 h-100" id="bg1"></div>
+                                    <img src="media/wallpictureTransparentWall.webp" alt="Huoneen seinä" class="room-base-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
+                                    <div class="surface-badge position-absolute bottom-0 start-0 m-3 bg-white bg-opacity-90 p-2 rounded-2 shadow-sm">
+                                        <span class="surface-label d-block fw-bold text-dark">Kuva 1</span>
+                                        <span class="selected-color-info small text-muted" id="info1">Ei valittua väriä</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="room-preview-container border border-3 rounded-3 overflow-hidden position-relative cursor-pointer shadow-sm" id="surface2" onclick="setActiveSurface('surface2')" style="height: 480px;">
+                                    <div class="color-bg-layer position-absolute top-0 start-0 w-100 h-100" id="bg2"></div>
+                                    <img src="media/room2.png" alt="Makuuhuoneen seinä" class="room-base-image position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
+                                    <div class="surface-badge position-absolute bottom-0 start-0 m-3 bg-white bg-opacity-90 p-2 rounded-2 shadow-sm">
+                                        <span class="surface-label d-block fw-bold text-dark">Kuva 2</span>
+                                        <span class="selected-color-info small text-muted" id="info2">Ei valittua väriä</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <button type="button" class="btn btn-secondary px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2" id="resetColorsBtn">
+                                    <i class="fa-solid fa-rotate-right"></i> Tyhjennä pinnat
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color Palette -->
+                    <div class="col-lg-5">
+                        <div class="card border-0 shadow-sm p-4">
+                            <div class="active-surface-indicator fs-6 text-secondary pb-3 mb-3 border-bottom">
+                                Valittuna: <strong id="activeSurfaceName" class="text-dark">Pinta 1</strong>
+                            </div>
+                            <div class="color-grid" id="colorGrid"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="galleria" class="section">
-            <div class="container">
-                <h2>Galleria</h2>
-                <p class="section-desc">Tutustu toteuttamiimme maalaus- ja tapetointikohteisiin.</p>
-                <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80" alt="Sisämaalaus - Olohuone">
-                        <div class="gallery-overlay">
-                            <span class="gallery-title">Olohuoneen sisämaalaus</span>
-                            <span class="gallery-zoom"><i class="fa-solid fa-expand"></i></span>
+        <!-- About Section -->
+        <section id="meista" class="py-6 py-lg-7 bg-light">
+            <div class="container py-5 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="fw-bold mb-4 text-dark">Meistä</h2>
+                        <p class="lead text-muted lh-lg mb-0">Olemme luotettava ja kokenut maalausalan yritys. Hoidamme sovitut työt ajallaan ja korkealla laatuvaatimuksella, asiakkaan toiveita kuunnellen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="galleria" class="py-6 py-lg-7 bg-white border-top">
+            <div class="container py-5">
+                <h2 class="text-center fw-bold mb-3 text-dark">Galleria</h2>
+                <p class="section-desc text-center text-muted mb-5">Tutustu toteuttamiimme maalaus- ja tapetointikohteisiin.</p>
+                <div class="row g-4">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item rounded-3 overflow-hidden position-relative shadow-sm cursor-pointer ratio ratio-4x3" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80" alt="Sisämaalaus - Olohuone" class="w-100 h-100 object-fit-cover">
+                            <div class="gallery-overlay position-absolute inset-0 d-flex justify-content-between align-items-end p-4">
+                                <span class="gallery-title text-white fw-bold">Olohuoneen sisämaalaus</span>
+                                <span class="gallery-zoom bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"><i class="fa-solid fa-expand"></i></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Tapetointi - Makuuhuone">
-                        <div class="gallery-overlay">
-                            <span class="gallery-title">Tehostetapetointi</span>
-                            <span class="gallery-zoom"><i class="fa-solid fa-expand"></i></span>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item rounded-3 overflow-hidden position-relative shadow-sm cursor-pointer ratio ratio-4x3" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Tapetointi - Makuuhuone" class="w-100 h-100 object-fit-cover">
+                            <div class="gallery-overlay position-absolute inset-0 d-flex justify-content-between align-items-end p-4">
+                                <span class="gallery-title text-white fw-bold">Tehostetapetointi</span>
+                                <span class="gallery-zoom bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"><i class="fa-solid fa-expand"></i></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Seinäremontti ja maalaus">
-                        <div class="gallery-overlay">
-                            <span class="gallery-title">Pintaremontti & maalaus</span>
-                            <span class="gallery-zoom"><i class="fa-solid fa-expand"></i></span>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item rounded-3 overflow-hidden position-relative shadow-sm cursor-pointer ratio ratio-4x3" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Seinäremontti ja maalaus" class="w-100 h-100 object-fit-cover">
+                            <div class="gallery-overlay position-absolute inset-0 d-flex justify-content-between align-items-end p-4">
+                                <span class="gallery-title text-white fw-bold">Pintaremontti & maalaus</span>
+                                <span class="gallery-zoom bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"><i class="fa-solid fa-expand"></i></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Moderni sisustusmaalaus">
-                        <div class="gallery-overlay">
-                            <span class="gallery-title">Moderni sisustusmaalaus</span>
-                            <span class="gallery-zoom"><i class="fa-solid fa-expand"></i></span>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item rounded-3 overflow-hidden position-relative shadow-sm cursor-pointer ratio ratio-4x3" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Moderni sisustusmaalaus" class="w-100 h-100 object-fit-cover">
+                            <div class="gallery-overlay position-absolute inset-0 d-flex justify-content-between align-items-end p-4">
+                                <span class="gallery-title text-white fw-bold">Moderni sisustusmaalaus</span>
+                                <span class="gallery-zoom bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"><i class="fa-solid fa-expand"></i></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80" alt="Kodin pinnan kunnostus">
-                        <div class="gallery-overlay">
-                            <span class="gallery-title">Kodin pintakunnostus</span>
-                            <span class="gallery-zoom"><i class="fa-solid fa-expand"></i></span>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item rounded-3 overflow-hidden position-relative shadow-sm cursor-pointer ratio ratio-4x3" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80" alt="Kodin pinnan kunnostus" class="w-100 h-100 object-fit-cover">
+                            <div class="gallery-overlay position-absolute inset-0 d-flex justify-content-between align-items-end p-4">
+                                <span class="gallery-title text-white fw-bold">Kodin pintakunnostus</span>
+                                <span class="gallery-zoom bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"><i class="fa-solid fa-expand"></i></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Tarkka tapetointityö">
-                        <div class="gallery-overlay">
-                            <span class="gallery-title">Tarkka tapetointityö</span>
-                            <span class="gallery-zoom"><i class="fa-solid fa-expand"></i></span>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="gallery-item rounded-3 overflow-hidden position-relative shadow-sm cursor-pointer ratio ratio-4x3" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Tarkka tapetointityö" class="w-100 h-100 object-fit-cover">
+                            <div class="gallery-overlay position-absolute inset-0 d-flex justify-content-between align-items-end p-4">
+                                <span class="gallery-title text-white fw-bold">Tarkka tapetointityö</span>
+                                <span class="gallery-zoom bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"><i class="fa-solid fa-expand"></i></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -147,76 +220,95 @@
             <img id="lightboxImg" src="" alt="Suurennettu kuva">
             <p id="lightboxCaption"></p>
         </div>
-        
-        <section id="yhteystiedot" class="section">
-            <div class="container">
-                <h2>Ota yhteyttä</h2>
-                <p class="section-desc">Haluatko tarjouksen tai lisätietoja palveluistamme? Täytä lomake tai ota yhteyttä suoraan.</p>
-                <div class="contact-layout">
-                    <form class="contact-form" id="contactForm" novalidate>
-                        <div class="form-group">
-                            <label for="name">Nimi *</label>
-                            <input type="text" id="name" name="name" required placeholder="Nimesi">
-                            <span class="error-msg" id="nameError"></span>
+
+        <!-- Contact Section -->
+        <section id="yhteystiedot" class="py-6 py-lg-7 bg-light border-top">
+            <div class="container py-5">
+                <h2 class="text-center fw-bold mb-3 text-dark">Ota yhteyttä</h2>
+                <p class="section-desc text-center text-muted mb-5">Haluatko tarjouksen tai lisätietoja palveluistamme? Täytä lomake tai ota yhteyttä suoraan.</p>
+                <div class="row g-4 justify-content-between">
+                    <div class="col-lg-7">
+                        <div class="card border-0 shadow-sm p-4 p-md-5">
+                            <form class="contact-form" id="contactForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label fw-semibold text-secondary">Nimi *</label>
+                                    <input type="text" class="form-control" id="name" name="name" required placeholder="Nimesi">
+                                    <span class="error-msg text-danger small" id="nameError"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label fw-semibold text-secondary">Sähköposti *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required placeholder="sähköposti@esimerkki.fi">
+                                    <span class="error-msg text-danger small" id="emailError"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label fw-semibold text-secondary">Puhelin</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+358 00 000 0000">
+                                    <span class="error-msg text-danger small" id="phoneError"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label fw-semibold text-secondary">Viesti *</label>
+                                    <textarea class="form-control" id="message" name="message" required rows="5" placeholder="Kerro lyhyesti mitä olisi tehtävänä..."></textarea>
+                                    <span class="error-msg text-danger small" id="messageError"></span>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold" id="submitBtn">
+                                    <span class="btn-text">Lähetä viesti</span>
+                                    <span class="btn-loading" hidden>
+                                        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                        Lähetetään...
+                                    </span>
+                                </button>
+                                <div class="form-status mt-3" id="formStatus" hidden></div>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Sähköposti *</label>
-                            <input type="email" id="email" name="email" required placeholder="sähköposti@esimerkki.fi">
-                            <span class="error-msg" id="emailError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Puhelin</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+358 00 000 0000">
-                            <span class="error-msg" id="phoneError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Viesti *</label>
-                            <textarea id="message" name="message" required rows="5" placeholder="Kerro lyhyesti mitä olisi tehtävänä..."></textarea>
-                            <span class="error-msg" id="messageError"></span>
-                        </div>
-                        <button type="submit" class="submit-btn" id="submitBtn">
-                            <span class="btn-text">Lähetä viesti</span>
-                            <span class="btn-loading" hidden>
-                                <span class="spinner"></span>
-                                Lähetetään...<br>
-                            </span>
-                        </button>
-                        <div class="form-status" id="formStatus" hidden></div>
-                    </form>
-                    <div class="contact-info-side">
-                        <div class="contact-card">
-                            <h3>Yhteystiedot</h3>
-                            <div class="contact-detail">
-                                <span class="contact-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm p-4 mb-4">
+                            <h3 class="h5 fw-bold text-dark mb-4">Yhteystiedot</h3>
+                            <div class="d-flex gap-3 mb-3">
+                                <div class="contact-icon bg-primary text-white rounded-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 2rem; height: 2rem;"><i class="fa-solid fa-location-dot"></i></div>
                                 <div>
-                                    <p class="contact-label">Osoite</p>
-                                    <p>Kotkantie 3, 90100 Oulu</p>
+                                    <p class="small text-muted mb-0">Osoite</p>
+                                    <p class="text-dark fw-medium mb-0">Kotkantie 3, 90100 Oulu</p>
                                 </div>
                             </div>
-                            <div class="contact-detail">
-                                <span class="contact-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+                            <div class="d-flex gap-3 mb-3">
+                                <div class="contact-icon bg-primary text-white rounded-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 2rem; height: 2rem;"><i class="fa-solid fa-phone"></i></div>
                                 <div>
-                                    <p class="contact-label">Puhelin</p>
-                                    <a href="tel:04499988899">044 999 888 99</a>
+                                    <p class="small text-muted mb-0">Puhelin</p>
+                                    <a href="tel:04499988899" class="text-primary fw-medium text-decoration-none">044 999 888 99</a>
                                 </div>
                             </div>
-                            <div class="contact-detail">
-                                <span class="contact-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
+                            <div class="d-flex gap-3 mb-3">
+                                <div class="contact-icon bg-primary text-white rounded-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 2rem; height: 2rem;"><i class="fa-solid fa-envelope"></i></div>
                                 <div>
-                                    <p class="contact-label">Sähköposti</p>
-                                    <a href="mailto:info@kotkantienmaalaus.fi">info@kotkantienmaalaus.fi</a>
+                                    <p class="small text-muted mb-0">Sähköposti</p>
+                                    <a href="mailto:info@kotkantienmaalaus.fi" class="text-primary fw-medium text-decoration-none">info@kotkantienmaalaus.fi</a>
                                 </div>
                             </div>
-                            <div class="contact-detail">
-                                <span class="contact-icon" aria-hidden="true"><i class="fa-solid fa-share-nodes"></i></span>
+                            <div class="d-flex gap-3">
+                                <div class="contact-icon bg-primary text-white rounded-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 2rem; height: 2rem;"><i class="fa-solid fa-share-nodes"></i></div>
                                 <div>
-                                    <p class="contact-label">Sosiaalinen media</p>
-                                    <div class="social-links">
-                                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                                    <p class="small text-muted mb-1">Sosiaalinen media</p>
+                                    <div class="d-flex gap-3">
+                                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="text-primary fw-medium text-decoration-none"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="text-primary fw-medium text-decoration-none"><i class="fa-brands fa-youtube"></i> YouTube</a>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Google Maps Embed -->
+                        <div class="card border-0 shadow-sm overflow-hidden" style="height: 250px;">
+                            <iframe
+                                title="Kotkantie 3 sijainti kartalla"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1737.755866173003!2d25.4853!3d65.0123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4431cee23456789%3A0xabcdef123456789!2sKotkantie%203%2C%2090100%20Oulu!5e0!3m2!1sfi!2sfi!4v1700000000000!5m2!1sfi!2sfi"
+                                width="100%"
+                                height="100%"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -224,12 +316,17 @@
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="bg-dark text-white-50 text-center py-4">
         <div class="container">
-            <p>&copy; 2026 Kotkantien Maalaus ja Tapetointi. Kaikki oikeudet pidätetään.</p>
+            <p class="small mb-0">&copy; 2026 Kotkantien Maalaus ja Tapetointi. Kaikki oikeudet pidätetään.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
 </body>
 </html>
