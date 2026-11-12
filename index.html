@@ -58,13 +58,13 @@
                 
                 <div class="color-tester-layout">
                     <div class="tester-preview-area">
-                        <div class="surface-box" id="surface1" onclick="setActiveSurface('surface1')">
-                            <div class="surface-label">Pinta 1 (Pääseinä)</div>
-                            <div class="selected-color-info" id="info1">Ei valittua väriä</div>
-                        </div>
-                        <div class="surface-box" id="surface2" onclick="setActiveSurface('surface2')">
-                            <div class="surface-label">Pinta 2 (Tehosteseinä / Katto)</div>
-                            <div class="selected-color-info" id="info2">Ei valittua väriä</div>
+                        <div class="surface-box room-preview-container" id="surface1" onclick="setActiveSurface('surface1')">
+                            <div class="color-bg-layer" id="bg1"></div>
+                            <img src="wallpictureTransparentWall.webp" alt="Huoneen seinä" class="room-base-image">
+                            <div class="surface-badge">
+                                <span class="surface-label">Pinta 1 (Pääseinä)</span>
+                                <span class="selected-color-info" id="info1">Ei valittua väriä</span>
+                            </div>
                         </div>
                         <button type="button" class="reset-colors-btn" id="resetColorsBtn">
                             <i class="fa-solid fa-rotate-right"></i> Tyhjennä pinnat

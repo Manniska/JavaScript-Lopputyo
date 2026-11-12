@@ -72,39 +72,16 @@
     function applyColorToActiveSurface(colorObj) {
         surfaceStates[activeSurfaceId] = { color: colorObj.hex, name: `${colorObj.name} (${colorObj.hex})` };
         
-        if (activeSurfaceId === "surface1") {
-            surface1.style.backgroundColor = colorObj.hex;
-            info1.textContent = `${colorObj.name} (${colorObj.hex})`;
-            // Set text color contrast friendly if dark background
-            if (isDarkColor(colorObj.hex)) {
-                surface1.style.color = "#ffffff";
-                surface1.querySelector(".surface-label").style.background = "rgba(17, 24, 39, 0.8)";
-                surface1.querySelector(".surface-label").style.color = "#ffffff";
-                info1.style.background = "rgba(17, 24, 39, 0.8)";
-                info1.style.color = "#ffffff";
-            } else {
-                surface1.style.color = "#1f2937";
-                surface1.querySelector(".surface-label").style.background = "rgba(255, 255, 255, 0.9)";
-                surface1.querySelector(".surface-label").style.color = "#1f2937";
-                info1.style.background = "rgba(255, 255, 255, 0.8)";
-                info1.style.color = "#4b5563";
-            }
-        } else {
-            surface2.style.backgroundColor = colorObj.hex;
-            info2.textContent = `${colorObj.name} (${colorObj.hex})`;
-            if (isDarkColor(colorObj.hex)) {
-                surface2.style.color = "#ffffff";
-                surface2.querySelector(".surface-label").style.background = "rgba(17, 24, 39, 0.8)";
-                surface2.querySelector(".surface-label").style.color = "#ffffff";
-                info2.style.background = "rgba(17, 24, 39, 0.8)";
-                info2.style.color = "#ffffff";
-            } else {
-                surface2.style.color = "#1f2937";
-                surface2.querySelector(".surface-label").style.background = "rgba(255, 255, 255, 0.9)";
-                surface2.querySelector(".surface-label").style.color = "#1f2937";
-                info2.style.background = "rgba(255, 255, 255, 0.8)";
-                info2.style.color = "#4b5563";
-            }
+        const bgId = activeSurfaceId === "surface1" ? "bg1" : "bg2";
+        const infoId = activeSurfaceId === "surface1" ? "info1" : "info2";
+        const bgEl = document.getElementById(bgId);
+        const infoEl = document.getElementById(infoId);
+
+        if (bgEl) {
+            bgEl.style.backgroundColor = colorObj.hex;
+        }
+        if (infoEl) {
+            infoEl.textContent = `${colorObj.name} (${colorObj.hex})`;
         }
     }
 
@@ -113,21 +90,14 @@
             surfaceStates.surface1 = { color: null, name: "Ei valittua väriä" };
             surfaceStates.surface2 = { color: null, name: "Ei valittua väriä" };
 
-            surface1.style.backgroundColor = "#ffffff";
-            surface1.style.color = "#1f2937";
-            surface1.querySelector(".surface-label").style.background = "rgba(255, 255, 255, 0.9)";
-            surface1.querySelector(".surface-label").style.color = "#1f2937";
-            info1.textContent = "Ei valittua väriä";
-            info1.style.background = "rgba(255, 255, 255, 0.8)";
-            info1.style.color = "#4b5563";
+            const bg1 = document.getElementById("bg1");
+            const bg2 = document.getElementById("bg2");
 
-            surface2.style.backgroundColor = "#ffffff";
-            surface2.style.color = "#1f2937";
-            surface2.querySelector(".surface-label").style.background = "rgba(255, 255, 255, 0.9)";
-            surface2.querySelector(".surface-label").style.color = "#1f2937";
+            if (bg1) bg1.style.backgroundColor = "transparent";
+            if (bg2) bg2.style.backgroundColor = "transparent";
+
+            info1.textContent = "Ei valittua väriä";
             info2.textContent = "Ei valittua väriä";
-            info2.style.background = "rgba(255, 255, 255, 0.8)";
-            info2.style.color = "#4b5563";
         });
     }
 
