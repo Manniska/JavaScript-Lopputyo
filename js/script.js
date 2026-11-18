@@ -1,3 +1,4 @@
+/* Tärkeät värit ja paletti */
 const colors = [
     { name: "Fiesta", hex: "#DD4132" },
     { name: "Jester Red", hex: "#9E1030" },
@@ -17,6 +18,7 @@ const colors = [
     { name: "Brown Granite", hex: "#615550" }
 ];
 
+// Valitun pinnan tila ja asetukset
 let activeSurfaceId = "surface1";
 const surfaceStates = {
     surface1: { color: null, name: "Ei valittua väriä" },
@@ -37,6 +39,7 @@ const colorGrid = document.getElementById("colorGrid");
 const activeSurfaceName = document.getElementById("activeSurfaceName");
 const resetColorsBtn = document.getElementById("resetColorsBtn");
 
+// Alustetaan väripaletti ja napit
 if (colorGrid) {
     colors.forEach(c => {
         const btn = document.createElement("button");
@@ -58,6 +61,7 @@ if (colorGrid) {
     });
 }
 
+// Päivittää aktiivisen pinnan
 window.setActiveSurface = function(surfaceId) {
     activeSurfaceId = surfaceId;
     activeSurfaceName.textContent = surfaceNames[surfaceId] || "Pinta 1";
@@ -69,6 +73,7 @@ window.setActiveSurface = function(surfaceId) {
 
 setActiveSurface("surface1");
 
+// Asettaa värin valitulle pinnalle
 function applyColorToActiveSurface(colorObj) {
     const state = surfaceStates[activeSurfaceId];
     if (!state) return;
@@ -96,6 +101,7 @@ if (resetColorsBtn) {
     });
 }
 
+// Sivun latautumisen jälkeen käynnistetään toiminnot
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".main-nav .nav-link");
@@ -137,7 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    window.openLightbox = function(element) {
+    // Lightbox toiminnallisuus kuville
+        window.openLightbox = function(element) {
         const lightbox = document.getElementById("lightbox");
         const lightboxImg = document.getElementById("lightboxImg");
         const lightboxCaption = document.getElementById("lightboxCaption");
@@ -163,7 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    const form = document.getElementById("contactForm");
+    // Lomakkeen validointi ja lähetys
+        const form = document.getElementById("contactForm");
     const submitBtn = document.getElementById("submitBtn");
     const btnText = submitBtn.querySelector(".btn-text");
     const btnLoading = submitBtn.querySelector(".btn-loading");
