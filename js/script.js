@@ -1,4 +1,3 @@
-/* Tärkeät värit ja paletti */
 const colors = [
     { name: "Fiesta", hex: "#DD4132" },
     { name: "Jester Red", hex: "#9E1030" },
@@ -18,7 +17,7 @@ const colors = [
     { name: "Brown Granite", hex: "#615550" }
 ];
 
-// Valitun pinnan tila ja asetukset
+// Valittu pinta
 let activeSurfaceId = "surface1";
 const surfaceStates = {
     surface1: { color: null, name: "Ei valittua väriä" },
@@ -73,7 +72,7 @@ window.setActiveSurface = function(surfaceId) {
 
 setActiveSurface("surface1");
 
-// Asettaa värin valitulle pinnalle
+// Värin vaihtaminen
 function applyColorToActiveSurface(colorObj) {
     const state = surfaceStates[activeSurfaceId];
     if (!state) return;
@@ -101,7 +100,7 @@ if (resetColorsBtn) {
     });
 }
 
-// Sivun latautumisen jälkeen käynnistetään toiminnot
+// On Load
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".main-nav .nav-link");
@@ -143,7 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Lightbox toiminnallisuus kuville
         window.openLightbox = function(element) {
         const lightbox = document.getElementById("lightbox");
         const lightboxImg = document.getElementById("lightboxImg");
@@ -170,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Lomakkeen validointi ja lähetys
+    // Lomake
         const form = document.getElementById("contactForm");
     const submitBtn = document.getElementById("submitBtn");
     const btnText = submitBtn.querySelector(".btn-text");
