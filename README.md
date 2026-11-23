@@ -2,7 +2,7 @@
 
 Oululaisen maalaus- ja tapetointialan yrityksen verkkosivusto. Projekti on toteutettu Selainohjelmoinnin näyttötyönä.
 
-**Julkaistu sivusto:** [https://selainohjelmointi.manniskadev.com](https://dev.manniskadev.com)
+**Julkaistu sivusto:** [https://dev.manniskadev.com](https://dev.manniskadev.com)
 
 ## Ominaisuudet ja osiot
 
